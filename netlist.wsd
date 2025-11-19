@@ -1,0 +1,55 @@
+@startuml "Metamodel Netlist"
+
+!theme vibrant
+skinparam packageStyle rect
+skinparam defaultFontName "Serif"
+skinparam linetype ortho
+skinparam nodesep 300
+
+' --- Classes Principales ---
+
+class Netlist {
+  + nom : String
+}
+
+abstract class NetlistElement <<abstract>> {
+
+}
+
+package "Catalogue.ecore" <<metamodel>>{
+
+
+    class Composant {
+
+    } 
+
+    class Port {
+
+    }
+}
+
+class Connexion {
+
+}
+
+class Commentaire {
+    + texte : String
+}
+
+Netlist "1" *-down-> "0..*" NetlistElement
+
+Composant "1" *-right- "1..*" Port
+
+Commentaire -> "0..*" NetlistElement
+Commentaire -|>  NetlistElement
+
+Connexion -up-|> NetlistElement
+
+Connexion "linkToSuccessor \n 1" <-> "predecessor \n 1" Port
+Connexion "linkToPredecessor \n 1" <-> "successor \n 1" Port
+
+
+
+
+
+@enduml

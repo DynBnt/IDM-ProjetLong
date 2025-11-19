@@ -1,0 +1,84 @@
+@startuml "Metamodel Catalogue"
+
+!theme vibrant
+skinparam packageStyle rect
+skinparam defaultFontName "Serif"
+skinparam linetype ortho
+
+' --- Classes Principales ---
+
+class Catalogue {
+  + nom : String
+}
+
+class Composant {
+  + nom : String
+}
+
+class Port {
+  + nom : String
+  + direction : DirectionPort
+}
+
+class Empreinte {
+  + nom : String
+  + largeur : Double
+  + hauteur : Double
+}
+
+class Pad {
+  + x : Double
+  + y : Double
+}
+
+' --- Système de Métadonnées Flexibles ---
+
+class TypeMetadonnee {
+  + cle : String
+}
+
+class Metadonnee {
+  + valeur : String
+}
+
+' --- Énumérations ---
+
+enum DirectionPort {
+  IN
+  OUT
+  INOUT
+}
+
+' --- Package Externe (pour la contrainte) ---
+' Note: Ceci simule une référence à un autre .ecore
+package "Contraintes.ecore" <<metamodel>> {
+  class Contrainte <<external>> {
+  }
+}
+
+
+' --- Relations et Cardinalités ---
+
+' Catalogue contient des Composants et des Types de Métadonnées
+Catalogue "1" *-- "0..*" Composant : composants >
+Catalogue "1" *-- "0..*" TypeMetadonnee : typesMetadonnees >
+
+' Composant a des Métadonnées, des Ports, une Empreinte et des Contraintes
+Composant "1" *-- "0..*" Metadonnee : metadonnees >
+Composant "1" *-- "1..*" Port : ports >
+Composant "1" *-- "0..1" Empreinte : empreinte >
+Composant "1" -right- "0..*" Contrainte : contraintes
+
+' Relation pour les Métadonnées
+Metadonnee "0..*" -- "1" TypeMetadonnee : type
+note on link: Le lien entre Metadonnee et\nTypeMetadonnee permet de\ndéfinir la 'clé' (ex: "brand")\net la 'valeur' (ex: "Krabtronics").
+
+' Empreinte contient des Pads
+Empreinte "1" *-- "1..*" Pad : pads >
+
+' Lien crucial : Pad -> Port
+' Un Pad est la réalisation physique d'UN Port logique.
+Pad "0..*" -- "1" Port : port
+note on link: Le lien clé entre\nle physique (Pad) et\nle logique (Port).
+
+@enduml

@@ -1,0 +1,82 @@
+@startuml "Metamodel Layout"
+
+!theme vibrant
+skinparam packageStyle rect
+skinparam defaultFontName "Serif"
+skinparam linetype ortho
+skinparam nodesep 250
+
+class Layout {
+
+}
+
+class Board {
+
+}
+
+abstract class BoardElement <<abstract>> {
+
+}
+
+abstract class Couche <<abstract>> {
+
+}
+
+class CoucheInterne {
+
+}
+
+class CoucheExterne {
+
+}
+
+package "Netlist.ecore" <<metamodel>> {
+
+    class Composant {
+    }
+
+    class Port {
+    }
+
+    class Connexion {
+    }
+}
+
+class PadComposant {
+    + x : Double
+    + y : Double
+}
+
+class Piste {
+    + forme
+}
+
+class Via {
+
+}
+
+
+
+Board "1..*" -* "1" Layout
+
+CoucheInterne -right|> Couche
+CoucheExterne -left|> Couche
+
+CoucheInterne "1..*" -up-* "1" Board
+CoucheExterne "2" -up-* "1" Board
+
+PadComposant "0..*" -up-* "1" CoucheExterne
+Composant "1" -up-* "1" PadComposant
+
+Piste "0..*" -up-* "1" Couche
+
+Connexion "1" -up- "1" Piste
+Composant "1" *-- "1..*" Port
+Connexion "linkToSuccessor \n 1" <-> "predecessor \n 1" Port
+Connexion "linkToPredecessor \n 1" <-> "successor \n 1" Port
+
+ 
+
+
+
+@enduml
