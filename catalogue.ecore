@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="catalogue" nsURI="http://www.example.org/catalogue" nsPrefix="catalogue">
+  <eClassifiers xsi:type="ecore:EClass" name="Catalogue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
+        eType="#//Component" containment="true" eOpposite="#//Component/catalogue"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Component">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="footprints" eType="#//Footprint"
+        containment="true" eOpposite="#//Footprint/components"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadonnees" upperBound="-1"
+        eType="#//MetaDonnee" containment="true" eOpposite="#//MetaDonnee/components"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="1" upperBound="-1"
+        eType="#//Port" containment="true" eOpposite="#//Port/components"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="catalogue" lowerBound="1"
+        eType="#//Catalogue" eOpposite="#//Catalogue/components"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Footprint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pads" lowerBound="1" upperBound="-1"
+        eType="#//Pad" containment="true" eOpposite="#//Pad/footprints"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" lowerBound="1"
+        eType="#//Component" eOpposite="#//Component/footprints"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Pad">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" lowerBound="1" eType="#//Port"
+        eOpposite="#//Port/pads"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="footprints" lowerBound="1"
+        eType="#//Footprint" eOpposite="#//Footprint/pads"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="direction" eType="#//DirectionPort"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pads" upperBound="-1" eType="#//Pad"
+        eOpposite="#//Pad/ports"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" lowerBound="1"
+        eType="#//Component" eOpposite="#//Component/ports"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MetaDonnee">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="typemetadonnees" lowerBound="1"
+        eType="#//TypeMetaDonnee" eOpposite="#//TypeMetaDonnee/metadonnees"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="components" lowerBound="1"
+        eType="#//Component" eOpposite="#//Component/metadonnees"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TypeMetaDonnee">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadonnees" upperBound="-1"
+        eType="#//MetaDonnee" eOpposite="#//MetaDonnee/typemetadonnees"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DirectionPort">
+    <eLiterals name="IN"/>
+    <eLiterals name="OUT"/>
+    <eLiterals name="INOUT"/>
+  </eClassifiers>
+</ecore:EPackage>
