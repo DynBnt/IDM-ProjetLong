@@ -10,7 +10,7 @@ Ce document définit les étapes clés pour la réalisation de la suite logiciel
 
 * **Implémentation Ecore :** Transformer les fichiers `.wsd` en modèles `.ecore` réels dans Eclipse.
 * **Gestion des Références Croisées :** * Lier `Netlist` vers `Catalogue` (Instance -> Composant).
-    * Lier `Layout` vers `Netlist` (Emplacement -> Instance)[cite: 117].
+    * Lier `Layout` vers `Netlist` (Emplacement -> Instance).
 * **Structuration des URI :** Assurer des namespaces distincts pour la maintenance et la séparation des préoccupations.
 
 ### 🔵 Phase 2 : Édition du Catalogue et DSL de Contraintes (F1)
