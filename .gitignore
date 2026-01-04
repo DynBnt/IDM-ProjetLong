@@ -1,0 +1,41 @@
+# =====================
+# Eclipse workspace
+# =====================
+.metadata/
+.recommenders/
+*.log
+
+# =====================
+# Eclipse project files (locaux)
+# =====================
+.classpath
+.project
+.settings/
+
+# =====================
+# Java / PDE build
+# =====================
+bin/
+target/
+*.class
+
+# =====================
+# Sirius / EMF temporaires
+# =====================
+*.aird~
+*.aird.lock
+*.ecore~
+*.genmodel~
+*.diagram~
+
+# =====================
+# Launch / PDE
+# =====================
+*.launch
+
+# =====================
+# OS / Editor
+# =====================
+.DS_Store
+Thumbs.db
+*.swp

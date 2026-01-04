@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="catalogue" nsURI="http://www.example.org/catalogue" nsPrefix="catalogue">
+  <eClassifiers xsi:type="ecore:EClass" name="Catalogue">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="composants" upperBound="-1"
+        eType="#//Composant" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Composant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="brand" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="datasheet" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="metadata" upperBound="-1"
+        eType="#//Metadata" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="footprint" eType="#//Footprint"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
+        eType="#//Port" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="contraintes" upperBound="-1"
+        eType="#//Contrainte" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Metadata">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="key" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Footprint">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Contrainte" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OpBinaire" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operandes" upperBound="-1"
+        eType="#//Contrainte" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Et" eSuperTypes="#//OpBinaire"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Ou" eSuperTypes="#//OpBinaire"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Non" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operande" eType="#//Contrainte"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Redondance" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minCount" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Geometrique" eSuperTypes="#//Contrainte">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="distanceMin" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeoGenerale" eSuperTypes="#//Geometrique">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ZoneType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GeoSpecifique" eSuperTypes="#//Geometrique">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cleMetadonneeCible" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeurMetadonneeCible"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ZoneType">
+    <eLiterals name="OTHER_COMPONENTS"/>
+    <eLiterals name="BOARD_EDGE"/>
+  </eClassifiers>
+</ecore:EPackage>
