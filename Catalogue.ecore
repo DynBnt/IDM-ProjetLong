@@ -20,7 +20,7 @@
         eType="#//Contrainte" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeMetadonnee">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cle" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Metadonnee">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
