@@ -78,21 +78,27 @@ public class CatalogueSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CataloguePackage.METADATA: {
-				Metadata metadata = (Metadata)theEObject;
-				T result = caseMetadata(metadata);
+			case CataloguePackage.TYPE_METADONNEE: {
+				TypeMetadonnee typeMetadonnee = (TypeMetadonnee)theEObject;
+				T result = caseTypeMetadonnee(typeMetadonnee);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case CataloguePackage.FOOTPRINT: {
-				Footprint footprint = (Footprint)theEObject;
-				T result = caseFootprint(footprint);
+			case CataloguePackage.METADONNEE: {
+				Metadonnee metadonnee = (Metadonnee)theEObject;
+				T result = caseMetadonnee(metadonnee);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case CataloguePackage.PORT: {
 				Port port = (Port)theEObject;
 				T result = casePort(port);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case CataloguePackage.EMPREINTE: {
+				Empreinte empreinte = (Empreinte)theEObject;
+				T result = caseEmpreinte(empreinte);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -197,32 +203,32 @@ public class CatalogueSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Metadata</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Type Metadonnee</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Metadata</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Type Metadonnee</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseMetadata(Metadata object) {
+	public T caseTypeMetadonnee(TypeMetadonnee object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Footprint</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Metadonnee</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Footprint</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Metadonnee</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseFootprint(Footprint object) {
+	public T caseMetadonnee(Metadonnee object) {
 		return null;
 	}
 
@@ -238,6 +244,21 @@ public class CatalogueSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePort(Port object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Empreinte</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Empreinte</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEmpreinte(Empreinte object) {
 		return null;
 	}
 

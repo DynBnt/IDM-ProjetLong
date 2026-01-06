@@ -7,17 +7,18 @@ import catalogue.CatalogueFactory;
 import catalogue.CataloguePackage;
 import catalogue.Composant;
 import catalogue.Contrainte;
+import catalogue.Empreinte;
 import catalogue.Et;
-import catalogue.Footprint;
 import catalogue.GeoGenerale;
 import catalogue.GeoSpecifique;
 import catalogue.Geometrique;
-import catalogue.Metadata;
+import catalogue.Metadonnee;
 import catalogue.Non;
 import catalogue.OpBinaire;
 import catalogue.Ou;
 import catalogue.Port;
 import catalogue.Redondance;
+import catalogue.TypeMetadonnee;
 import catalogue.ZoneType;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -54,14 +55,14 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass metadataEClass = null;
+	private EClass typeMetadonneeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass footprintEClass = null;
+	private EClass metadonneeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,6 +70,13 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	private EClass portEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass empreinteEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,8 +224,28 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getCatalogue_Nom() {
+		return (EAttribute)catalogueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getCatalogue_Composants() {
-		return (EReference)catalogueEClass.getEStructuralFeatures().get(0);
+		return (EReference)catalogueEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getCatalogue_TypesMetadonnees() {
+		return (EReference)catalogueEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -236,7 +264,7 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getComposant_Id() {
+	public EAttribute getComposant_Nom() {
 		return (EAttribute)composantEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -246,48 +274,8 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getComposant_Name() {
-		return (EAttribute)composantEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComposant_Brand() {
-		return (EAttribute)composantEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getComposant_Datasheet() {
-		return (EAttribute)composantEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getComposant_Metadata() {
-		return (EReference)composantEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getComposant_Footprint() {
-		return (EReference)composantEClass.getEStructuralFeatures().get(5);
+	public EReference getComposant_Metadonnees() {
+		return (EReference)composantEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -297,7 +285,17 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 */
 	@Override
 	public EReference getComposant_Ports() {
-		return (EReference)composantEClass.getEStructuralFeatures().get(6);
+		return (EReference)composantEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getComposant_Empreinte() {
+		return (EReference)composantEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -307,7 +305,7 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 */
 	@Override
 	public EReference getComposant_Contraintes() {
-		return (EReference)composantEClass.getEStructuralFeatures().get(7);
+		return (EReference)composantEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -316,8 +314,8 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EClass getMetadata() {
-		return metadataEClass;
+	public EClass getTypeMetadonnee() {
+		return typeMetadonneeEClass;
 	}
 
 	/**
@@ -326,8 +324,8 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMetadata_Key() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(0);
+	public EAttribute getTypeMetadonnee_Nom() {
+		return (EAttribute)typeMetadonneeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -336,8 +334,8 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getMetadata_Value() {
-		return (EAttribute)metadataEClass.getEStructuralFeatures().get(1);
+	public EClass getMetadonnee() {
+		return metadonneeEClass;
 	}
 
 	/**
@@ -346,8 +344,8 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EClass getFootprint() {
-		return footprintEClass;
+	public EAttribute getMetadonnee_Valeur() {
+		return (EAttribute)metadonneeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -356,18 +354,8 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getFootprint_Width() {
-		return (EAttribute)footprintEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getFootprint_Height() {
-		return (EAttribute)footprintEClass.getEStructuralFeatures().get(1);
+	public EReference getMetadonnee_Type() {
+		return (EReference)metadonneeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -386,7 +374,7 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getPort_Name() {
+	public EAttribute getPort_Nom() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -416,8 +404,8 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EClass getContrainte() {
-		return contrainteEClass;
+	public EClass getEmpreinte() {
+		return empreinteEClass;
 	}
 
 	/**
@@ -426,8 +414,48 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 	 * @generated
 	 */
 	@Override
-	public EAttribute getContrainte_Name() {
-		return (EAttribute)contrainteEClass.getEStructuralFeatures().get(0);
+	public EAttribute getEmpreinte_Nom() {
+		return (EAttribute)empreinteEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEmpreinte_Largeur() {
+		return (EAttribute)empreinteEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEmpreinte_Hauteur() {
+		return (EAttribute)empreinteEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getEmpreinte_Ports() {
+		return (EReference)empreinteEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getContrainte() {
+		return contrainteEClass;
 	}
 
 	/**
@@ -620,33 +648,36 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 
 		// Create classes and their features
 		catalogueEClass = createEClass(CATALOGUE);
+		createEAttribute(catalogueEClass, CATALOGUE__NOM);
 		createEReference(catalogueEClass, CATALOGUE__COMPOSANTS);
+		createEReference(catalogueEClass, CATALOGUE__TYPES_METADONNEES);
 
 		composantEClass = createEClass(COMPOSANT);
-		createEAttribute(composantEClass, COMPOSANT__ID);
-		createEAttribute(composantEClass, COMPOSANT__NAME);
-		createEAttribute(composantEClass, COMPOSANT__BRAND);
-		createEAttribute(composantEClass, COMPOSANT__DATASHEET);
-		createEReference(composantEClass, COMPOSANT__METADATA);
-		createEReference(composantEClass, COMPOSANT__FOOTPRINT);
+		createEAttribute(composantEClass, COMPOSANT__NOM);
+		createEReference(composantEClass, COMPOSANT__METADONNEES);
 		createEReference(composantEClass, COMPOSANT__PORTS);
+		createEReference(composantEClass, COMPOSANT__EMPREINTE);
 		createEReference(composantEClass, COMPOSANT__CONTRAINTES);
 
-		metadataEClass = createEClass(METADATA);
-		createEAttribute(metadataEClass, METADATA__KEY);
-		createEAttribute(metadataEClass, METADATA__VALUE);
+		typeMetadonneeEClass = createEClass(TYPE_METADONNEE);
+		createEAttribute(typeMetadonneeEClass, TYPE_METADONNEE__NOM);
 
-		footprintEClass = createEClass(FOOTPRINT);
-		createEAttribute(footprintEClass, FOOTPRINT__WIDTH);
-		createEAttribute(footprintEClass, FOOTPRINT__HEIGHT);
+		metadonneeEClass = createEClass(METADONNEE);
+		createEAttribute(metadonneeEClass, METADONNEE__VALEUR);
+		createEReference(metadonneeEClass, METADONNEE__TYPE);
 
 		portEClass = createEClass(PORT);
-		createEAttribute(portEClass, PORT__NAME);
+		createEAttribute(portEClass, PORT__NOM);
 		createEAttribute(portEClass, PORT__X);
 		createEAttribute(portEClass, PORT__Y);
 
+		empreinteEClass = createEClass(EMPREINTE);
+		createEAttribute(empreinteEClass, EMPREINTE__NOM);
+		createEAttribute(empreinteEClass, EMPREINTE__LARGEUR);
+		createEAttribute(empreinteEClass, EMPREINTE__HAUTEUR);
+		createEReference(empreinteEClass, EMPREINTE__PORTS);
+
 		contrainteEClass = createEClass(CONTRAINTE);
-		createEAttribute(contrainteEClass, CONTRAINTE__NAME);
 
 		opBinaireEClass = createEClass(OP_BINAIRE);
 		createEReference(opBinaireEClass, OP_BINAIRE__OPERANDES);
@@ -714,48 +745,51 @@ public class CataloguePackageImpl extends EPackageImpl implements CataloguePacka
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(catalogueEClass, Catalogue.class, "Catalogue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getCatalogue_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Catalogue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCatalogue_Composants(), this.getComposant(), null, "composants", null, 0, -1, Catalogue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCatalogue_TypesMetadonnees(), this.getTypeMetadonnee(), null, "typesMetadonnees", null, 0, -1, Catalogue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(composantEClass, Composant.class, "Composant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getComposant_Id(), ecorePackage.getEString(), "id", null, 0, 1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComposant_Name(), ecorePackage.getEString(), "name", null, 0, 1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComposant_Brand(), ecorePackage.getEString(), "brand", null, 0, 1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComposant_Datasheet(), ecorePackage.getEString(), "datasheet", null, 0, 1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComposant_Metadata(), this.getMetadata(), null, "metadata", null, 0, -1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComposant_Footprint(), this.getFootprint(), null, "footprint", null, 0, 1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComposant_Ports(), this.getPort(), null, "ports", null, 0, -1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComposant_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComposant_Metadonnees(), this.getMetadonnee(), null, "metadonnees", null, 0, -1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComposant_Ports(), this.getPort(), null, "ports", null, 1, -1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComposant_Empreinte(), this.getEmpreinte(), null, "empreinte", null, 0, 1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComposant_Contraintes(), this.getContrainte(), null, "contraintes", null, 0, -1, Composant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(metadataEClass, Metadata.class, "Metadata", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getMetadata_Key(), ecorePackage.getEString(), "key", null, 0, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMetadata_Value(), ecorePackage.getEString(), "value", null, 0, 1, Metadata.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(typeMetadonneeEClass, TypeMetadonnee.class, "TypeMetadonnee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTypeMetadonnee_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, TypeMetadonnee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(footprintEClass, Footprint.class, "Footprint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFootprint_Width(), ecorePackage.getEDouble(), "width", null, 0, 1, Footprint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFootprint_Height(), ecorePackage.getEDouble(), "height", null, 0, 1, Footprint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(metadonneeEClass, Metadonnee.class, "Metadonnee", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMetadonnee_Valeur(), ecorePackage.getEString(), "valeur", null, 0, 1, Metadonnee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getMetadonnee_Type(), this.getTypeMetadonnee(), null, "type", null, 1, 1, Metadonnee.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_X(), ecorePackage.getEDouble(), "x", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Y(), ecorePackage.getEDouble(), "y", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(contrainteEClass, Contrainte.class, "Contrainte", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getContrainte_Name(), ecorePackage.getEString(), "name", null, 0, 1, Contrainte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(empreinteEClass, Empreinte.class, "Empreinte", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEmpreinte_Nom(), ecorePackage.getEString(), "nom", null, 0, 1, Empreinte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEmpreinte_Largeur(), ecorePackage.getEDouble(), "largeur", null, 0, 1, Empreinte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEmpreinte_Hauteur(), ecorePackage.getEDouble(), "hauteur", null, 0, 1, Empreinte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEmpreinte_Ports(), this.getPort(), null, "ports", null, 1, -1, Empreinte.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(opBinaireEClass, OpBinaire.class, "OpBinaire", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getOpBinaire_Operandes(), this.getContrainte(), null, "operandes", null, 0, -1, OpBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(contrainteEClass, Contrainte.class, "Contrainte", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(opBinaireEClass, OpBinaire.class, "OpBinaire", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOpBinaire_Operandes(), this.getContrainte(), null, "operandes", null, 2, 2, OpBinaire.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(etEClass, Et.class, "Et", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(ouEClass, Ou.class, "Ou", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(nonEClass, Non.class, "Non", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNon_Operande(), this.getContrainte(), null, "operande", null, 0, 1, Non.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNon_Operande(), this.getContrainte(), null, "operande", null, 1, 1, Non.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(redondanceEClass, Redondance.class, "Redondance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRedondance_MinCount(), ecorePackage.getEInt(), "minCount", null, 0, 1, Redondance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(geometriqueEClass, Geometrique.class, "Geometrique", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(geometriqueEClass, Geometrique.class, "Geometrique", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGeometrique_DistanceMin(), ecorePackage.getEDouble(), "distanceMin", null, 0, 1, Geometrique.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(geoGeneraleEClass, GeoGenerale.class, "GeoGenerale", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

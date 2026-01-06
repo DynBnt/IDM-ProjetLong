@@ -27,7 +27,7 @@ public interface Non extends Contrainte {
 	 * @return the value of the '<em>Operande</em>' containment reference.
 	 * @see #setOperande(Contrainte)
 	 * @see catalogue.CataloguePackage#getNon_Operande()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Contrainte getOperande();

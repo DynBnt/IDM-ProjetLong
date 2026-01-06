@@ -76,16 +76,20 @@ public class CatalogueAdapterFactory extends AdapterFactoryImpl {
 				return createComposantAdapter();
 			}
 			@Override
-			public Adapter caseMetadata(Metadata object) {
-				return createMetadataAdapter();
+			public Adapter caseTypeMetadonnee(TypeMetadonnee object) {
+				return createTypeMetadonneeAdapter();
 			}
 			@Override
-			public Adapter caseFootprint(Footprint object) {
-				return createFootprintAdapter();
+			public Adapter caseMetadonnee(Metadonnee object) {
+				return createMetadonneeAdapter();
 			}
 			@Override
 			public Adapter casePort(Port object) {
 				return createPortAdapter();
+			}
+			@Override
+			public Adapter caseEmpreinte(Empreinte object) {
+				return createEmpreinteAdapter();
 			}
 			@Override
 			public Adapter caseContrainte(Contrainte object) {
@@ -172,30 +176,30 @@ public class CatalogueAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link catalogue.Metadata <em>Metadata</em>}'.
+	 * Creates a new adapter for an object of class '{@link catalogue.TypeMetadonnee <em>Type Metadonnee</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see catalogue.Metadata
+	 * @see catalogue.TypeMetadonnee
 	 * @generated
 	 */
-	public Adapter createMetadataAdapter() {
+	public Adapter createTypeMetadonneeAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link catalogue.Footprint <em>Footprint</em>}'.
+	 * Creates a new adapter for an object of class '{@link catalogue.Metadonnee <em>Metadonnee</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see catalogue.Footprint
+	 * @see catalogue.Metadonnee
 	 * @generated
 	 */
-	public Adapter createFootprintAdapter() {
+	public Adapter createMetadonneeAdapter() {
 		return null;
 	}
 
@@ -210,6 +214,20 @@ public class CatalogueAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link catalogue.Empreinte <em>Empreinte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see catalogue.Empreinte
+	 * @generated
+	 */
+	public Adapter createEmpreinteAdapter() {
 		return null;
 	}
 

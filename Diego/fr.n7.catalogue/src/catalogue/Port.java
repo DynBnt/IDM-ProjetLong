@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link catalogue.Port#getName <em>Name</em>}</li>
+ *   <li>{@link catalogue.Port#getNom <em>Nom</em>}</li>
  *   <li>{@link catalogue.Port#getX <em>X</em>}</li>
  *   <li>{@link catalogue.Port#getY <em>Y</em>}</li>
  * </ul>
@@ -24,26 +24,26 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Port extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see catalogue.CataloguePackage#getPort_Name()
-	 * @model
+	 * @return the value of the '<em>Nom</em>' attribute.
+	 * @see #setNom(String)
+	 * @see catalogue.CataloguePackage#getPort_Nom()
+	 * @model id="true"
 	 * @generated
 	 */
-	String getName();
+	String getNom();
 
 	/**
-	 * Sets the value of the '{@link catalogue.Port#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link catalogue.Port#getNom <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Nom</em>' attribute.
+	 * @see #getNom()
 	 * @generated
 	 */
-	void setName(String value);
+	void setNom(String value);
 
 	/**
 	 * Returns the value of the '<em><b>X</b></em>' attribute.

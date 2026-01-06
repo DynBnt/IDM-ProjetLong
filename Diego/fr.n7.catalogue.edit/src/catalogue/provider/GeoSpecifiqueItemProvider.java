@@ -114,10 +114,8 @@ public class GeoSpecifiqueItemProvider extends GeometriqueItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GeoSpecifique)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_GeoSpecifique_type") :
-			getString("_UI_GeoSpecifique_type") + " " + label;
+		GeoSpecifique geoSpecifique = (GeoSpecifique)object;
+		return getString("_UI_GeoSpecifique_type") + " " + geoSpecifique.getDistanceMin();
 	}
 
 

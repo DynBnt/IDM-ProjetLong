@@ -11,35 +11,37 @@
       <genEnumLiterals ecoreEnumLiteral="Catalogue.ecore#//ZoneType/BOARD_EDGE"/>
     </genEnums>
     <genClasses ecoreClass="Catalogue.ecore#//Catalogue">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Catalogue/nom"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Catalogue/composants"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Catalogue/typesMetadonnees"/>
     </genClasses>
     <genClasses ecoreClass="Catalogue.ecore#//Composant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Composant/id"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Composant/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Composant/brand"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Composant/datasheet"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Composant/metadata"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Composant/footprint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Composant/nom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Composant/metadonnees"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Composant/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Composant/empreinte"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Composant/contraintes"/>
     </genClasses>
-    <genClasses ecoreClass="Catalogue.ecore#//Metadata">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Metadata/key"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Metadata/value"/>
+    <genClasses ecoreClass="Catalogue.ecore#//TypeMetadonnee">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//TypeMetadonnee/nom"/>
     </genClasses>
-    <genClasses ecoreClass="Catalogue.ecore#//Footprint">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Footprint/width"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Footprint/height"/>
+    <genClasses ecoreClass="Catalogue.ecore#//Metadonnee">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Metadonnee/valeur"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Metadonnee/type"/>
     </genClasses>
     <genClasses ecoreClass="Catalogue.ecore#//Port">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Port/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Port/nom"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Port/x"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Port/y"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="Catalogue.ecore#//Contrainte">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Contrainte/name"/>
+    <genClasses ecoreClass="Catalogue.ecore#//Empreinte">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Empreinte/nom"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Empreinte/largeur"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Empreinte/hauteur"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//Empreinte/ports"/>
     </genClasses>
-    <genClasses ecoreClass="Catalogue.ecore#//OpBinaire">
+    <genClasses image="false" ecoreClass="Catalogue.ecore#//Contrainte"/>
+    <genClasses image="false" ecoreClass="Catalogue.ecore#//OpBinaire">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Catalogue.ecore#//OpBinaire/operandes"/>
     </genClasses>
     <genClasses ecoreClass="Catalogue.ecore#//Et"/>
@@ -50,7 +52,7 @@
     <genClasses ecoreClass="Catalogue.ecore#//Redondance">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Redondance/minCount"/>
     </genClasses>
-    <genClasses ecoreClass="Catalogue.ecore#//Geometrique">
+    <genClasses image="false" ecoreClass="Catalogue.ecore#//Geometrique">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Catalogue.ecore#//Geometrique/distanceMin"/>
     </genClasses>
     <genClasses ecoreClass="Catalogue.ecore#//GeoGenerale">

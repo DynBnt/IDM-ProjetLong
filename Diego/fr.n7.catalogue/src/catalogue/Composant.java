@@ -15,13 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link catalogue.Composant#getId <em>Id</em>}</li>
- *   <li>{@link catalogue.Composant#getName <em>Name</em>}</li>
- *   <li>{@link catalogue.Composant#getBrand <em>Brand</em>}</li>
- *   <li>{@link catalogue.Composant#getDatasheet <em>Datasheet</em>}</li>
- *   <li>{@link catalogue.Composant#getMetadata <em>Metadata</em>}</li>
- *   <li>{@link catalogue.Composant#getFootprint <em>Footprint</em>}</li>
+ *   <li>{@link catalogue.Composant#getNom <em>Nom</em>}</li>
+ *   <li>{@link catalogue.Composant#getMetadonnees <em>Metadonnees</em>}</li>
  *   <li>{@link catalogue.Composant#getPorts <em>Ports</em>}</li>
+ *   <li>{@link catalogue.Composant#getEmpreinte <em>Empreinte</em>}</li>
  *   <li>{@link catalogue.Composant#getContraintes <em>Contraintes</em>}</li>
  * </ul>
  *
@@ -31,126 +28,38 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Composant extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Id</em>' attribute.
-	 * @see #setId(String)
-	 * @see catalogue.CataloguePackage#getComposant_Id()
+	 * @return the value of the '<em>Nom</em>' attribute.
+	 * @see #setNom(String)
+	 * @see catalogue.CataloguePackage#getComposant_Nom()
 	 * @model
 	 * @generated
 	 */
-	String getId();
+	String getNom();
 
 	/**
-	 * Sets the value of the '{@link catalogue.Composant#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link catalogue.Composant#getNom <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Id</em>' attribute.
-	 * @see #getId()
+	 * @param value the new value of the '<em>Nom</em>' attribute.
+	 * @see #getNom()
 	 * @generated
 	 */
-	void setId(String value);
+	void setNom(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Metadonnees</b></em>' containment reference list.
+	 * The list contents are of type {@link catalogue.Metadonnee}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see catalogue.CataloguePackage#getComposant_Name()
-	 * @model
-	 * @generated
-	 */
-	String getName();
-
-	/**
-	 * Sets the value of the '{@link catalogue.Composant#getName <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
-	 * @generated
-	 */
-	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Brand</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Brand</em>' attribute.
-	 * @see #setBrand(String)
-	 * @see catalogue.CataloguePackage#getComposant_Brand()
-	 * @model
-	 * @generated
-	 */
-	String getBrand();
-
-	/**
-	 * Sets the value of the '{@link catalogue.Composant#getBrand <em>Brand</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Brand</em>' attribute.
-	 * @see #getBrand()
-	 * @generated
-	 */
-	void setBrand(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Datasheet</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Datasheet</em>' attribute.
-	 * @see #setDatasheet(String)
-	 * @see catalogue.CataloguePackage#getComposant_Datasheet()
-	 * @model
-	 * @generated
-	 */
-	String getDatasheet();
-
-	/**
-	 * Sets the value of the '{@link catalogue.Composant#getDatasheet <em>Datasheet</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Datasheet</em>' attribute.
-	 * @see #getDatasheet()
-	 * @generated
-	 */
-	void setDatasheet(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Metadata</b></em>' containment reference list.
-	 * The list contents are of type {@link catalogue.Metadata}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Metadata</em>' containment reference list.
-	 * @see catalogue.CataloguePackage#getComposant_Metadata()
+	 * @return the value of the '<em>Metadonnees</em>' containment reference list.
+	 * @see catalogue.CataloguePackage#getComposant_Metadonnees()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Metadata> getMetadata();
-
-	/**
-	 * Returns the value of the '<em><b>Footprint</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Footprint</em>' containment reference.
-	 * @see #setFootprint(Footprint)
-	 * @see catalogue.CataloguePackage#getComposant_Footprint()
-	 * @model containment="true"
-	 * @generated
-	 */
-	Footprint getFootprint();
-
-	/**
-	 * Sets the value of the '{@link catalogue.Composant#getFootprint <em>Footprint</em>}' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Footprint</em>' containment reference.
-	 * @see #getFootprint()
-	 * @generated
-	 */
-	void setFootprint(Footprint value);
+	EList<Metadonnee> getMetadonnees();
 
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
@@ -159,10 +68,32 @@ public interface Composant extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see catalogue.CataloguePackage#getComposant_Ports()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Port> getPorts();
+
+	/**
+	 * Returns the value of the '<em><b>Empreinte</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Empreinte</em>' containment reference.
+	 * @see #setEmpreinte(Empreinte)
+	 * @see catalogue.CataloguePackage#getComposant_Empreinte()
+	 * @model containment="true"
+	 * @generated
+	 */
+	Empreinte getEmpreinte();
+
+	/**
+	 * Sets the value of the '{@link catalogue.Composant#getEmpreinte <em>Empreinte</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Empreinte</em>' containment reference.
+	 * @see #getEmpreinte()
+	 * @generated
+	 */
+	void setEmpreinte(Empreinte value);
 
 	/**
 	 * Returns the value of the '<em><b>Contraintes</b></em>' containment reference list.

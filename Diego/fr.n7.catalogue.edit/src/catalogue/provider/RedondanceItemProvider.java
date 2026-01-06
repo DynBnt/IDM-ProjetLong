@@ -91,10 +91,8 @@ public class RedondanceItemProvider extends ContrainteItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Redondance)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Redondance_type") :
-			getString("_UI_Redondance_type") + " " + label;
+		Redondance redondance = (Redondance)object;
+		return getString("_UI_Redondance_type") + " " + redondance.getMinCount();
 	}
 
 

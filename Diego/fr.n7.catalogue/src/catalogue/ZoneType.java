@@ -36,7 +36,7 @@ public enum ZoneType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	BOARD_EDGE(0, "BOARD_EDGE", "BOARD_EDGE");
+	BOARD_EDGE(1, "BOARD_EDGE", "BOARD_EDGE");
 
 	/**
 	 * The '<em><b>OTHER COMPONENTS</b></em>' literal value.
@@ -58,7 +58,7 @@ public enum ZoneType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int BOARD_EDGE_VALUE = 0;
+	public static final int BOARD_EDGE_VALUE = 1;
 
 	/**
 	 * An array of all the '<em><b>Zone Type</b></em>' enumerators.
@@ -127,6 +127,7 @@ public enum ZoneType implements Enumerator {
 	public static ZoneType get(int value) {
 		switch (value) {
 			case OTHER_COMPONENTS_VALUE: return OTHER_COMPONENTS;
+			case BOARD_EDGE_VALUE: return BOARD_EDGE;
 		}
 		return null;
 	}

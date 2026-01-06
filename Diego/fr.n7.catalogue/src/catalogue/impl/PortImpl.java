@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link catalogue.impl.PortImpl#getName <em>Name</em>}</li>
+ *   <li>{@link catalogue.impl.PortImpl#getNom <em>Nom</em>}</li>
  *   <li>{@link catalogue.impl.PortImpl#getX <em>X</em>}</li>
  *   <li>{@link catalogue.impl.PortImpl#getY <em>Y</em>}</li>
  * </ul>
@@ -29,24 +29,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getNom()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String NOM_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getNom() <em>Nom</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getNom()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected String nom = NOM_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getX() <em>X</em>}' attribute.
@@ -113,8 +113,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * @generated
 	 */
 	@Override
-	public String getName() {
-		return name;
+	public String getNom() {
+		return nom;
 	}
 
 	/**
@@ -123,11 +123,11 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * @generated
 	 */
 	@Override
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setNom(String newNom) {
+		String oldNom = nom;
+		nom = newNom;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CataloguePackage.PORT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, CataloguePackage.PORT__NOM, oldNom, nom));
 	}
 
 	/**
@@ -184,8 +184,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case CataloguePackage.PORT__NAME:
-				return getName();
+			case CataloguePackage.PORT__NOM:
+				return getNom();
 			case CataloguePackage.PORT__X:
 				return getX();
 			case CataloguePackage.PORT__Y:
@@ -202,8 +202,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case CataloguePackage.PORT__NAME:
-				setName((String)newValue);
+			case CataloguePackage.PORT__NOM:
+				setNom((String)newValue);
 				return;
 			case CataloguePackage.PORT__X:
 				setX((Double)newValue);
@@ -223,8 +223,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case CataloguePackage.PORT__NAME:
-				setName(NAME_EDEFAULT);
+			case CataloguePackage.PORT__NOM:
+				setNom(NOM_EDEFAULT);
 				return;
 			case CataloguePackage.PORT__X:
 				setX(X_EDEFAULT);
@@ -244,8 +244,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case CataloguePackage.PORT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case CataloguePackage.PORT__NOM:
+				return NOM_EDEFAULT == null ? nom != null : !NOM_EDEFAULT.equals(nom);
 			case CataloguePackage.PORT__X:
 				return x != X_EDEFAULT;
 			case CataloguePackage.PORT__Y:
@@ -264,8 +264,8 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 		if (eIsProxy()) return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (nom: ");
+		result.append(nom);
 		result.append(", x: ");
 		result.append(x);
 		result.append(", y: ");

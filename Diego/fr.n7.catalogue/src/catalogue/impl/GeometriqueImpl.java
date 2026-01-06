@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class GeometriqueImpl extends ContrainteImpl implements Geometrique {
+public abstract class GeometriqueImpl extends ContrainteImpl implements Geometrique {
 	/**
 	 * The default value of the '{@link #getDistanceMin() <em>Distance Min</em>}' attribute.
 	 * <!-- begin-user-doc -->

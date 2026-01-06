@@ -17,7 +17,7 @@ import org.eclipse.emf.common.util.EList;
  * </ul>
  *
  * @see catalogue.CataloguePackage#getOpBinaire()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface OpBinaire extends Contrainte {
@@ -28,7 +28,7 @@ public interface OpBinaire extends Contrainte {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Operandes</em>' containment reference list.
 	 * @see catalogue.CataloguePackage#getOpBinaire_Operandes()
-	 * @model containment="true"
+	 * @model containment="true" lower="2" upper="2"
 	 * @generated
 	 */
 	EList<Contrainte> getOperandes();

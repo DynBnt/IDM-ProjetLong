@@ -16,7 +16,7 @@ package catalogue;
  * </ul>
  *
  * @see catalogue.CataloguePackage#getGeometrique()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Geometrique extends Contrainte {

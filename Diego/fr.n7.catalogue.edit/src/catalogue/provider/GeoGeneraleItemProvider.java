@@ -91,10 +91,8 @@ public class GeoGeneraleItemProvider extends GeometriqueItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((GeoGenerale)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_GeoGenerale_type") :
-			getString("_UI_GeoGenerale_type") + " " + label;
+		GeoGenerale geoGenerale = (GeoGenerale)object;
+		return getString("_UI_GeoGenerale_type") + " " + geoGenerale.getDistanceMin();
 	}
 
 

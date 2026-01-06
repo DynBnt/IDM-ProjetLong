@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class OpBinaireImpl extends ContrainteImpl implements OpBinaire {
+public abstract class OpBinaireImpl extends ContrainteImpl implements OpBinaire {
 	/**
 	 * The cached value of the '{@link #getOperandes() <em>Operandes</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

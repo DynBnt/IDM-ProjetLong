@@ -3,8 +3,6 @@
 package catalogue.provider;
 
 
-import catalogue.Et;
-
 import java.util.Collection;
 import java.util.List;
 
@@ -64,10 +62,7 @@ public class EtItemProvider extends OpBinaireItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Et)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Et_type") :
-			getString("_UI_Et_type") + " " + label;
+		return getString("_UI_Et_type");
 	}
 
 

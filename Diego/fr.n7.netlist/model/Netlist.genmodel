@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.n7.netlist/src" modelPluginID="fr.n7.netlist"
+    modelName="Netlist" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="21.0" copyrightFields="false"
+    usedGenPackages="../../fr.n7.catalogue/model/Catalogue.genmodel#//catalogue" operationReflection="true"
+    importOrganizing="true">
+  <foreignModel>Netlist.ecore</foreignModel>
+  <genPackages prefix="Netlist" disposableProviderFactory="true" ecorePackage="Netlist.ecore#/">
+    <genClasses ecoreClass="Netlist.ecore#//Netlist">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Netlist.ecore#//Netlist/nom"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Netlist.ecore#//Netlist/elements"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Netlist.ecore#//NetlistElement"/>
+    <genClasses ecoreClass="Netlist.ecore#//InstanceComposant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Netlist.ecore#//InstanceComposant/nom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Netlist.ecore#//InstanceComposant/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Netlist.ecore#//InstanceComposant/ports"/>
+    </genClasses>
+    <genClasses ecoreClass="Netlist.ecore#//InstancePort">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Netlist.ecore#//InstancePort/port"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Netlist.ecore#//InstancePort/instance"/>
+    </genClasses>
+    <genClasses ecoreClass="Netlist.ecore#//Connexion">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Netlist.ecore#//Connexion/nom"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Netlist.ecore#//Connexion/depart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Netlist.ecore#//Connexion/arrivee"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Netlist.ecore#//Connexion/portDepart"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Netlist.ecore#//Connexion/portArrivee"/>
+    </genClasses>
+    <genClasses ecoreClass="Netlist.ecore#//Commentaire">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Netlist.ecore#//Commentaire/texte"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Netlist.ecore#//Commentaire/sujet"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

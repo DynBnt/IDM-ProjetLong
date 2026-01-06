@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+  <extension point="org.eclipse.sirius.componentization">
+    <component
+        id="fr.n7.netlist.design"
+        name="netlist"
+        class="fr.n7.netlist.design.Activator"
+        odesign="description/netlist.odesign">
+    </component>
+  </extension>
+
+</plugin>

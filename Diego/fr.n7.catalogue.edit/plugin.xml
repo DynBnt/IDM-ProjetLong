@@ -9,7 +9,7 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated Catalogue -->
       <factory
-            uri="http://www.example.org/catalogue"
+            uri="http://fr.n7.catalogue"
             class="catalogue.provider.CatalogueItemProviderAdapterFactory"
             supportedTypes=
               "org.eclipse.emf.edit.provider.IEditingDomainItemProvider

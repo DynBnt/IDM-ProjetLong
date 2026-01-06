@@ -40,22 +40,22 @@ public interface CatalogueFactory extends EFactory {
 	Composant createComposant();
 
 	/**
-	 * Returns a new object of class '<em>Metadata</em>'.
+	 * Returns a new object of class '<em>Type Metadonnee</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Metadata</em>'.
+	 * @return a new object of class '<em>Type Metadonnee</em>'.
 	 * @generated
 	 */
-	Metadata createMetadata();
+	TypeMetadonnee createTypeMetadonnee();
 
 	/**
-	 * Returns a new object of class '<em>Footprint</em>'.
+	 * Returns a new object of class '<em>Metadonnee</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Footprint</em>'.
+	 * @return a new object of class '<em>Metadonnee</em>'.
 	 * @generated
 	 */
-	Footprint createFootprint();
+	Metadonnee createMetadonnee();
 
 	/**
 	 * Returns a new object of class '<em>Port</em>'.
@@ -67,13 +67,13 @@ public interface CatalogueFactory extends EFactory {
 	Port createPort();
 
 	/**
-	 * Returns a new object of class '<em>Op Binaire</em>'.
+	 * Returns a new object of class '<em>Empreinte</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Op Binaire</em>'.
+	 * @return a new object of class '<em>Empreinte</em>'.
 	 * @generated
 	 */
-	OpBinaire createOpBinaire();
+	Empreinte createEmpreinte();
 
 	/**
 	 * Returns a new object of class '<em>Et</em>'.
@@ -110,15 +110,6 @@ public interface CatalogueFactory extends EFactory {
 	 * @generated
 	 */
 	Redondance createRedondance();
-
-	/**
-	 * Returns a new object of class '<em>Geometrique</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Geometrique</em>'.
-	 * @generated
-	 */
-	Geometrique createGeometrique();
 
 	/**
 	 * Returns a new object of class '<em>Geo Generale</em>'.

@@ -99,10 +99,7 @@ public class NonItemProvider extends ContrainteItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Non)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Non_type") :
-			getString("_UI_Non_type") + " " + label;
+		return getString("_UI_Non_type");
 	}
 
 
@@ -139,11 +136,6 @@ public class NonItemProvider extends ContrainteItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(CataloguePackage.Literals.NON__OPERANDE,
-				 CatalogueFactory.eINSTANCE.createOpBinaire()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CataloguePackage.Literals.NON__OPERANDE,
 				 CatalogueFactory.eINSTANCE.createEt()));
 
 		newChildDescriptors.add
@@ -160,11 +152,6 @@ public class NonItemProvider extends ContrainteItemProvider {
 			(createChildParameter
 				(CataloguePackage.Literals.NON__OPERANDE,
 				 CatalogueFactory.eINSTANCE.createRedondance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CataloguePackage.Literals.NON__OPERANDE,
-				 CatalogueFactory.eINSTANCE.createGeometrique()));
 
 		newChildDescriptors.add
 			(createChildParameter

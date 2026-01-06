@@ -73,17 +73,6 @@ public class GeometriqueItemProvider extends ContrainteItemProvider {
 	}
 
 	/**
-	 * This returns Geometrique.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Geometrique"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -91,10 +80,8 @@ public class GeometriqueItemProvider extends ContrainteItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Geometrique)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_Geometrique_type") :
-			getString("_UI_Geometrique_type") + " " + label;
+		Geometrique geometrique = (Geometrique)object;
+		return getString("_UI_Geometrique_type") + " " + geometrique.getDistanceMin();
 	}
 
 

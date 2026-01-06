@@ -118,49 +118,49 @@ public class CatalogueItemProviderAdapterFactory extends CatalogueAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link catalogue.Metadata} instances.
+	 * This keeps track of the one adapter used for all {@link catalogue.TypeMetadonnee} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected MetadataItemProvider metadataItemProvider;
+	protected TypeMetadonneeItemProvider typeMetadonneeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link catalogue.Metadata}.
+	 * This creates an adapter for a {@link catalogue.TypeMetadonnee}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createMetadataAdapter() {
-		if (metadataItemProvider == null) {
-			metadataItemProvider = new MetadataItemProvider(this);
+	public Adapter createTypeMetadonneeAdapter() {
+		if (typeMetadonneeItemProvider == null) {
+			typeMetadonneeItemProvider = new TypeMetadonneeItemProvider(this);
 		}
 
-		return metadataItemProvider;
+		return typeMetadonneeItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link catalogue.Footprint} instances.
+	 * This keeps track of the one adapter used for all {@link catalogue.Metadonnee} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FootprintItemProvider footprintItemProvider;
+	protected MetadonneeItemProvider metadonneeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link catalogue.Footprint}.
+	 * This creates an adapter for a {@link catalogue.Metadonnee}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createFootprintAdapter() {
-		if (footprintItemProvider == null) {
-			footprintItemProvider = new FootprintItemProvider(this);
+	public Adapter createMetadonneeAdapter() {
+		if (metadonneeItemProvider == null) {
+			metadonneeItemProvider = new MetadonneeItemProvider(this);
 		}
 
-		return footprintItemProvider;
+		return metadonneeItemProvider;
 	}
 
 	/**
@@ -187,26 +187,26 @@ public class CatalogueItemProviderAdapterFactory extends CatalogueAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link catalogue.OpBinaire} instances.
+	 * This keeps track of the one adapter used for all {@link catalogue.Empreinte} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected OpBinaireItemProvider opBinaireItemProvider;
+	protected EmpreinteItemProvider empreinteItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link catalogue.OpBinaire}.
+	 * This creates an adapter for a {@link catalogue.Empreinte}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createOpBinaireAdapter() {
-		if (opBinaireItemProvider == null) {
-			opBinaireItemProvider = new OpBinaireItemProvider(this);
+	public Adapter createEmpreinteAdapter() {
+		if (empreinteItemProvider == null) {
+			empreinteItemProvider = new EmpreinteItemProvider(this);
 		}
 
-		return opBinaireItemProvider;
+		return empreinteItemProvider;
 	}
 
 	/**
@@ -299,29 +299,6 @@ public class CatalogueItemProviderAdapterFactory extends CatalogueAdapterFactory
 		}
 
 		return redondanceItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link catalogue.Geometrique} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected GeometriqueItemProvider geometriqueItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link catalogue.Geometrique}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createGeometriqueAdapter() {
-		if (geometriqueItemProvider == null) {
-			geometriqueItemProvider = new GeometriqueItemProvider(this);
-		}
-
-		return geometriqueItemProvider;
 	}
 
 	/**
@@ -477,15 +454,14 @@ public class CatalogueItemProviderAdapterFactory extends CatalogueAdapterFactory
 	public void dispose() {
 		if (catalogueItemProvider != null) catalogueItemProvider.dispose();
 		if (composantItemProvider != null) composantItemProvider.dispose();
-		if (metadataItemProvider != null) metadataItemProvider.dispose();
-		if (footprintItemProvider != null) footprintItemProvider.dispose();
+		if (typeMetadonneeItemProvider != null) typeMetadonneeItemProvider.dispose();
+		if (metadonneeItemProvider != null) metadonneeItemProvider.dispose();
 		if (portItemProvider != null) portItemProvider.dispose();
-		if (opBinaireItemProvider != null) opBinaireItemProvider.dispose();
+		if (empreinteItemProvider != null) empreinteItemProvider.dispose();
 		if (etItemProvider != null) etItemProvider.dispose();
 		if (ouItemProvider != null) ouItemProvider.dispose();
 		if (nonItemProvider != null) nonItemProvider.dispose();
 		if (redondanceItemProvider != null) redondanceItemProvider.dispose();
-		if (geometriqueItemProvider != null) geometriqueItemProvider.dispose();
 		if (geoGeneraleItemProvider != null) geoGeneraleItemProvider.dispose();
 		if (geoSpecifiqueItemProvider != null) geoSpecifiqueItemProvider.dispose();
 	}

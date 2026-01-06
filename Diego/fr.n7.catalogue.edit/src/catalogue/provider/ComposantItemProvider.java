@@ -63,94 +63,25 @@ public class ComposantItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIdPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
-			addBrandPropertyDescriptor(object);
-			addDatasheetPropertyDescriptor(object);
+			addNomPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Id feature.
+	 * This adds a property descriptor for the Nom feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addIdPropertyDescriptor(Object object) {
+	protected void addNomPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Composant_id_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Composant_id_feature", "_UI_Composant_type"),
-				 CataloguePackage.Literals.COMPOSANT__ID,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Composant_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Composant_name_feature", "_UI_Composant_type"),
-				 CataloguePackage.Literals.COMPOSANT__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Brand feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addBrandPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Composant_brand_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Composant_brand_feature", "_UI_Composant_type"),
-				 CataloguePackage.Literals.COMPOSANT__BRAND,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Datasheet feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addDatasheetPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Composant_datasheet_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Composant_datasheet_feature", "_UI_Composant_type"),
-				 CataloguePackage.Literals.COMPOSANT__DATASHEET,
+				 getString("_UI_Composant_nom_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Composant_nom_feature", "_UI_Composant_type"),
+				 CataloguePackage.Literals.COMPOSANT__NOM,
 				 true,
 				 false,
 				 false,
@@ -171,9 +102,9 @@ public class ComposantItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(CataloguePackage.Literals.COMPOSANT__METADATA);
-			childrenFeatures.add(CataloguePackage.Literals.COMPOSANT__FOOTPRINT);
+			childrenFeatures.add(CataloguePackage.Literals.COMPOSANT__METADONNEES);
 			childrenFeatures.add(CataloguePackage.Literals.COMPOSANT__PORTS);
+			childrenFeatures.add(CataloguePackage.Literals.COMPOSANT__EMPREINTE);
 			childrenFeatures.add(CataloguePackage.Literals.COMPOSANT__CONTRAINTES);
 		}
 		return childrenFeatures;
@@ -211,7 +142,7 @@ public class ComposantItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Composant)object).getName();
+		String label = ((Composant)object).getNom();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Composant_type") :
 			getString("_UI_Composant_type") + " " + label;
@@ -230,15 +161,12 @@ public class ComposantItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Composant.class)) {
-			case CataloguePackage.COMPOSANT__ID:
-			case CataloguePackage.COMPOSANT__NAME:
-			case CataloguePackage.COMPOSANT__BRAND:
-			case CataloguePackage.COMPOSANT__DATASHEET:
+			case CataloguePackage.COMPOSANT__NOM:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case CataloguePackage.COMPOSANT__METADATA:
-			case CataloguePackage.COMPOSANT__FOOTPRINT:
+			case CataloguePackage.COMPOSANT__METADONNEES:
 			case CataloguePackage.COMPOSANT__PORTS:
+			case CataloguePackage.COMPOSANT__EMPREINTE:
 			case CataloguePackage.COMPOSANT__CONTRAINTES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -259,13 +187,8 @@ public class ComposantItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CataloguePackage.Literals.COMPOSANT__METADATA,
-				 CatalogueFactory.eINSTANCE.createMetadata()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CataloguePackage.Literals.COMPOSANT__FOOTPRINT,
-				 CatalogueFactory.eINSTANCE.createFootprint()));
+				(CataloguePackage.Literals.COMPOSANT__METADONNEES,
+				 CatalogueFactory.eINSTANCE.createMetadonnee()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -274,8 +197,8 @@ public class ComposantItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(CataloguePackage.Literals.COMPOSANT__CONTRAINTES,
-				 CatalogueFactory.eINSTANCE.createOpBinaire()));
+				(CataloguePackage.Literals.COMPOSANT__EMPREINTE,
+				 CatalogueFactory.eINSTANCE.createEmpreinte()));
 
 		newChildDescriptors.add
 			(createChildParameter
@@ -296,11 +219,6 @@ public class ComposantItemProvider
 			(createChildParameter
 				(CataloguePackage.Literals.COMPOSANT__CONTRAINTES,
 				 CatalogueFactory.eINSTANCE.createRedondance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CataloguePackage.Literals.COMPOSANT__CONTRAINTES,
-				 CatalogueFactory.eINSTANCE.createGeometrique()));
 
 		newChildDescriptors.add
 			(createChildParameter

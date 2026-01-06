@@ -17,12 +17,14 @@ import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EStructuralFeature;
 
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
@@ -61,8 +63,31 @@ public class CatalogueItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addNomPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Nom feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addNomPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Catalogue_nom_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Catalogue_nom_feature", "_UI_Catalogue_type"),
+				 CataloguePackage.Literals.CATALOGUE__NOM,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -78,6 +103,7 @@ public class CatalogueItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(CataloguePackage.Literals.CATALOGUE__COMPOSANTS);
+			childrenFeatures.add(CataloguePackage.Literals.CATALOGUE__TYPES_METADONNEES);
 		}
 		return childrenFeatures;
 	}
@@ -114,7 +140,10 @@ public class CatalogueItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Catalogue_type");
+		String label = ((Catalogue)object).getNom();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Catalogue_type") :
+			getString("_UI_Catalogue_type") + " " + label;
 	}
 
 
@@ -130,7 +159,11 @@ public class CatalogueItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Catalogue.class)) {
+			case CataloguePackage.CATALOGUE__NOM:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
 			case CataloguePackage.CATALOGUE__COMPOSANTS:
+			case CataloguePackage.CATALOGUE__TYPES_METADONNEES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -152,6 +185,11 @@ public class CatalogueItemProvider
 			(createChildParameter
 				(CataloguePackage.Literals.CATALOGUE__COMPOSANTS,
 				 CatalogueFactory.eINSTANCE.createComposant()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(CataloguePackage.Literals.CATALOGUE__TYPES_METADONNEES,
+				 CatalogueFactory.eINSTANCE.createTypeMetadonnee()));
 	}
 
 	/**

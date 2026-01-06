@@ -39,7 +39,7 @@ public interface CataloguePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.example.org/catalogue";
+	String eNS_URI = "http://fr.n7.catalogue";
 
 	/**
 	 * The package namespace name.
@@ -68,13 +68,31 @@ public interface CataloguePackage extends EPackage {
 	int CATALOGUE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOGUE__NOM = 0;
+
+	/**
 	 * The feature id for the '<em><b>Composants</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOGUE__COMPOSANTS = 0;
+	int CATALOGUE__COMPOSANTS = 1;
+
+	/**
+	 * The feature id for the '<em><b>Types Metadonnees</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CATALOGUE__TYPES_METADONNEES = 2;
 
 	/**
 	 * The number of structural features of the '<em>Catalogue</em>' class.
@@ -83,7 +101,7 @@ public interface CataloguePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CATALOGUE_FEATURE_COUNT = 1;
+	int CATALOGUE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Catalogue</em>' class.
@@ -105,58 +123,22 @@ public interface CataloguePackage extends EPackage {
 	int COMPOSANT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSANT__ID = 0;
+	int COMPOSANT__NOM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Metadonnees</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSANT__NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Brand</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSANT__BRAND = 2;
-
-	/**
-	 * The feature id for the '<em><b>Datasheet</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSANT__DATASHEET = 3;
-
-	/**
-	 * The feature id for the '<em><b>Metadata</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSANT__METADATA = 4;
-
-	/**
-	 * The feature id for the '<em><b>Footprint</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPOSANT__FOOTPRINT = 5;
+	int COMPOSANT__METADONNEES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
@@ -165,7 +147,16 @@ public interface CataloguePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSANT__PORTS = 6;
+	int COMPOSANT__PORTS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Empreinte</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPOSANT__EMPREINTE = 3;
 
 	/**
 	 * The feature id for the '<em><b>Contraintes</b></em>' containment reference list.
@@ -174,7 +165,7 @@ public interface CataloguePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSANT__CONTRAINTES = 7;
+	int COMPOSANT__CONTRAINTES = 4;
 
 	/**
 	 * The number of structural features of the '<em>Composant</em>' class.
@@ -183,7 +174,7 @@ public interface CataloguePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPOSANT_FEATURE_COUNT = 8;
+	int COMPOSANT_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Composant</em>' class.
@@ -195,96 +186,87 @@ public interface CataloguePackage extends EPackage {
 	int COMPOSANT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link catalogue.impl.MetadataImpl <em>Metadata</em>}' class.
+	 * The meta object id for the '{@link catalogue.impl.TypeMetadonneeImpl <em>Type Metadonnee</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see catalogue.impl.MetadataImpl
-	 * @see catalogue.impl.CataloguePackageImpl#getMetadata()
+	 * @see catalogue.impl.TypeMetadonneeImpl
+	 * @see catalogue.impl.CataloguePackageImpl#getTypeMetadonnee()
 	 * @generated
 	 */
-	int METADATA = 2;
+	int TYPE_METADONNEE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Key</b></em>' attribute.
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__KEY = 0;
+	int TYPE_METADONNEE__NOM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * The number of structural features of the '<em>Type Metadonnee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA__VALUE = 1;
+	int TYPE_METADONNEE_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of structural features of the '<em>Metadata</em>' class.
+	 * The number of operations of the '<em>Type Metadonnee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA_FEATURE_COUNT = 2;
+	int TYPE_METADONNEE_OPERATION_COUNT = 0;
 
 	/**
-	 * The number of operations of the '<em>Metadata</em>' class.
+	 * The meta object id for the '{@link catalogue.impl.MetadonneeImpl <em>Metadonnee</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see catalogue.impl.MetadonneeImpl
+	 * @see catalogue.impl.CataloguePackageImpl#getMetadonnee()
+	 * @generated
+	 */
+	int METADONNEE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Valeur</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int METADATA_OPERATION_COUNT = 0;
+	int METADONNEE__VALEUR = 0;
 
 	/**
-	 * The meta object id for the '{@link catalogue.impl.FootprintImpl <em>Footprint</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see catalogue.impl.FootprintImpl
-	 * @see catalogue.impl.CataloguePackageImpl#getFootprint()
-	 * @generated
-	 */
-	int FOOTPRINT = 3;
-
-	/**
-	 * The feature id for the '<em><b>Width</b></em>' attribute.
+	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOOTPRINT__WIDTH = 0;
+	int METADONNEE__TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Height</b></em>' attribute.
+	 * The number of structural features of the '<em>Metadonnee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOOTPRINT__HEIGHT = 1;
+	int METADONNEE_FEATURE_COUNT = 2;
 
 	/**
-	 * The number of structural features of the '<em>Footprint</em>' class.
+	 * The number of operations of the '<em>Metadonnee</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOOTPRINT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Footprint</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FOOTPRINT_OPERATION_COUNT = 0;
+	int METADONNEE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link catalogue.impl.PortImpl <em>Port</em>}' class.
@@ -297,13 +279,13 @@ public interface CataloguePackage extends EPackage {
 	int PORT = 4;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__NAME = 0;
+	int PORT__NOM = 0;
 
 	/**
 	 * The feature id for the '<em><b>X</b></em>' attribute.
@@ -342,6 +324,70 @@ public interface CataloguePackage extends EPackage {
 	int PORT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link catalogue.impl.EmpreinteImpl <em>Empreinte</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see catalogue.impl.EmpreinteImpl
+	 * @see catalogue.impl.CataloguePackageImpl#getEmpreinte()
+	 * @generated
+	 */
+	int EMPREINTE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Nom</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPREINTE__NOM = 0;
+
+	/**
+	 * The feature id for the '<em><b>Largeur</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPREINTE__LARGEUR = 1;
+
+	/**
+	 * The feature id for the '<em><b>Hauteur</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPREINTE__HAUTEUR = 2;
+
+	/**
+	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPREINTE__PORTS = 3;
+
+	/**
+	 * The number of structural features of the '<em>Empreinte</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPREINTE_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>Empreinte</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EMPREINTE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link catalogue.impl.ContrainteImpl <em>Contrainte</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -349,16 +395,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getContrainte()
 	 * @generated
 	 */
-	int CONTRAINTE = 5;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONTRAINTE__NAME = 0;
+	int CONTRAINTE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Contrainte</em>' class.
@@ -367,7 +404,7 @@ public interface CataloguePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONTRAINTE_FEATURE_COUNT = 1;
+	int CONTRAINTE_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Contrainte</em>' class.
@@ -386,16 +423,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getOpBinaire()
 	 * @generated
 	 */
-	int OP_BINAIRE = 6;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OP_BINAIRE__NAME = CONTRAINTE__NAME;
+	int OP_BINAIRE = 7;
 
 	/**
 	 * The feature id for the '<em><b>Operandes</b></em>' containment reference list.
@@ -432,16 +460,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getEt()
 	 * @generated
 	 */
-	int ET = 7;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ET__NAME = OP_BINAIRE__NAME;
+	int ET = 8;
 
 	/**
 	 * The feature id for the '<em><b>Operandes</b></em>' containment reference list.
@@ -478,16 +497,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getOu()
 	 * @generated
 	 */
-	int OU = 8;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OU__NAME = OP_BINAIRE__NAME;
+	int OU = 9;
 
 	/**
 	 * The feature id for the '<em><b>Operandes</b></em>' containment reference list.
@@ -524,16 +534,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getNon()
 	 * @generated
 	 */
-	int NON = 9;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NON__NAME = CONTRAINTE__NAME;
+	int NON = 10;
 
 	/**
 	 * The feature id for the '<em><b>Operande</b></em>' containment reference.
@@ -570,16 +571,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getRedondance()
 	 * @generated
 	 */
-	int REDONDANCE = 10;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REDONDANCE__NAME = CONTRAINTE__NAME;
+	int REDONDANCE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Min Count</b></em>' attribute.
@@ -616,16 +608,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getGeometrique()
 	 * @generated
 	 */
-	int GEOMETRIQUE = 11;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GEOMETRIQUE__NAME = CONTRAINTE__NAME;
+	int GEOMETRIQUE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Distance Min</b></em>' attribute.
@@ -662,16 +645,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getGeoGenerale()
 	 * @generated
 	 */
-	int GEO_GENERALE = 12;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GEO_GENERALE__NAME = GEOMETRIQUE__NAME;
+	int GEO_GENERALE = 13;
 
 	/**
 	 * The feature id for the '<em><b>Distance Min</b></em>' attribute.
@@ -717,16 +691,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getGeoSpecifique()
 	 * @generated
 	 */
-	int GEO_SPECIFIQUE = 13;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GEO_SPECIFIQUE__NAME = GEOMETRIQUE__NAME;
+	int GEO_SPECIFIQUE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Distance Min</b></em>' attribute.
@@ -781,7 +746,7 @@ public interface CataloguePackage extends EPackage {
 	 * @see catalogue.impl.CataloguePackageImpl#getZoneType()
 	 * @generated
 	 */
-	int ZONE_TYPE = 14;
+	int ZONE_TYPE = 15;
 
 
 	/**
@@ -795,6 +760,17 @@ public interface CataloguePackage extends EPackage {
 	EClass getCatalogue();
 
 	/**
+	 * Returns the meta object for the attribute '{@link catalogue.Catalogue#getNom <em>Nom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see catalogue.Catalogue#getNom()
+	 * @see #getCatalogue()
+	 * @generated
+	 */
+	EAttribute getCatalogue_Nom();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link catalogue.Catalogue#getComposants <em>Composants</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -804,6 +780,17 @@ public interface CataloguePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCatalogue_Composants();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link catalogue.Catalogue#getTypesMetadonnees <em>Types Metadonnees</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Types Metadonnees</em>'.
+	 * @see catalogue.Catalogue#getTypesMetadonnees()
+	 * @see #getCatalogue()
+	 * @generated
+	 */
+	EReference getCatalogue_TypesMetadonnees();
 
 	/**
 	 * Returns the meta object for class '{@link catalogue.Composant <em>Composant</em>}'.
@@ -816,70 +803,26 @@ public interface CataloguePackage extends EPackage {
 	EClass getComposant();
 
 	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Composant#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link catalogue.Composant#getNom <em>Nom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see catalogue.Composant#getId()
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see catalogue.Composant#getNom()
 	 * @see #getComposant()
 	 * @generated
 	 */
-	EAttribute getComposant_Id();
+	EAttribute getComposant_Nom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Composant#getName <em>Name</em>}'.
+	 * Returns the meta object for the containment reference list '{@link catalogue.Composant#getMetadonnees <em>Metadonnees</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see catalogue.Composant#getName()
+	 * @return the meta object for the containment reference list '<em>Metadonnees</em>'.
+	 * @see catalogue.Composant#getMetadonnees()
 	 * @see #getComposant()
 	 * @generated
 	 */
-	EAttribute getComposant_Name();
-
-	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Composant#getBrand <em>Brand</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Brand</em>'.
-	 * @see catalogue.Composant#getBrand()
-	 * @see #getComposant()
-	 * @generated
-	 */
-	EAttribute getComposant_Brand();
-
-	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Composant#getDatasheet <em>Datasheet</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Datasheet</em>'.
-	 * @see catalogue.Composant#getDatasheet()
-	 * @see #getComposant()
-	 * @generated
-	 */
-	EAttribute getComposant_Datasheet();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link catalogue.Composant#getMetadata <em>Metadata</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Metadata</em>'.
-	 * @see catalogue.Composant#getMetadata()
-	 * @see #getComposant()
-	 * @generated
-	 */
-	EReference getComposant_Metadata();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link catalogue.Composant#getFootprint <em>Footprint</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Footprint</em>'.
-	 * @see catalogue.Composant#getFootprint()
-	 * @see #getComposant()
-	 * @generated
-	 */
-	EReference getComposant_Footprint();
+	EReference getComposant_Metadonnees();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link catalogue.Composant#getPorts <em>Ports</em>}'.
@@ -893,6 +836,17 @@ public interface CataloguePackage extends EPackage {
 	EReference getComposant_Ports();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link catalogue.Composant#getEmpreinte <em>Empreinte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Empreinte</em>'.
+	 * @see catalogue.Composant#getEmpreinte()
+	 * @see #getComposant()
+	 * @generated
+	 */
+	EReference getComposant_Empreinte();
+
+	/**
 	 * Returns the meta object for the containment reference list '{@link catalogue.Composant#getContraintes <em>Contraintes</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -904,68 +858,57 @@ public interface CataloguePackage extends EPackage {
 	EReference getComposant_Contraintes();
 
 	/**
-	 * Returns the meta object for class '{@link catalogue.Metadata <em>Metadata</em>}'.
+	 * Returns the meta object for class '{@link catalogue.TypeMetadonnee <em>Type Metadonnee</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Metadata</em>'.
-	 * @see catalogue.Metadata
+	 * @return the meta object for class '<em>Type Metadonnee</em>'.
+	 * @see catalogue.TypeMetadonnee
 	 * @generated
 	 */
-	EClass getMetadata();
+	EClass getTypeMetadonnee();
 
 	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Metadata#getKey <em>Key</em>}'.
+	 * Returns the meta object for the attribute '{@link catalogue.TypeMetadonnee#getNom <em>Nom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Key</em>'.
-	 * @see catalogue.Metadata#getKey()
-	 * @see #getMetadata()
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see catalogue.TypeMetadonnee#getNom()
+	 * @see #getTypeMetadonnee()
 	 * @generated
 	 */
-	EAttribute getMetadata_Key();
+	EAttribute getTypeMetadonnee_Nom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Metadata#getValue <em>Value</em>}'.
+	 * Returns the meta object for class '{@link catalogue.Metadonnee <em>Metadonnee</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see catalogue.Metadata#getValue()
-	 * @see #getMetadata()
+	 * @return the meta object for class '<em>Metadonnee</em>'.
+	 * @see catalogue.Metadonnee
 	 * @generated
 	 */
-	EAttribute getMetadata_Value();
+	EClass getMetadonnee();
 
 	/**
-	 * Returns the meta object for class '{@link catalogue.Footprint <em>Footprint</em>}'.
+	 * Returns the meta object for the attribute '{@link catalogue.Metadonnee#getValeur <em>Valeur</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Footprint</em>'.
-	 * @see catalogue.Footprint
+	 * @return the meta object for the attribute '<em>Valeur</em>'.
+	 * @see catalogue.Metadonnee#getValeur()
+	 * @see #getMetadonnee()
 	 * @generated
 	 */
-	EClass getFootprint();
+	EAttribute getMetadonnee_Valeur();
 
 	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Footprint#getWidth <em>Width</em>}'.
+	 * Returns the meta object for the reference '{@link catalogue.Metadonnee#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Width</em>'.
-	 * @see catalogue.Footprint#getWidth()
-	 * @see #getFootprint()
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see catalogue.Metadonnee#getType()
+	 * @see #getMetadonnee()
 	 * @generated
 	 */
-	EAttribute getFootprint_Width();
-
-	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Footprint#getHeight <em>Height</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Height</em>'.
-	 * @see catalogue.Footprint#getHeight()
-	 * @see #getFootprint()
-	 * @generated
-	 */
-	EAttribute getFootprint_Height();
+	EReference getMetadonnee_Type();
 
 	/**
 	 * Returns the meta object for class '{@link catalogue.Port <em>Port</em>}'.
@@ -978,15 +921,15 @@ public interface CataloguePackage extends EPackage {
 	EClass getPort();
 
 	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Port#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link catalogue.Port#getNom <em>Nom</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see catalogue.Port#getName()
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see catalogue.Port#getNom()
 	 * @see #getPort()
 	 * @generated
 	 */
-	EAttribute getPort_Name();
+	EAttribute getPort_Nom();
 
 	/**
 	 * Returns the meta object for the attribute '{@link catalogue.Port#getX <em>X</em>}'.
@@ -1011,6 +954,60 @@ public interface CataloguePackage extends EPackage {
 	EAttribute getPort_Y();
 
 	/**
+	 * Returns the meta object for class '{@link catalogue.Empreinte <em>Empreinte</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Empreinte</em>'.
+	 * @see catalogue.Empreinte
+	 * @generated
+	 */
+	EClass getEmpreinte();
+
+	/**
+	 * Returns the meta object for the attribute '{@link catalogue.Empreinte#getNom <em>Nom</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Nom</em>'.
+	 * @see catalogue.Empreinte#getNom()
+	 * @see #getEmpreinte()
+	 * @generated
+	 */
+	EAttribute getEmpreinte_Nom();
+
+	/**
+	 * Returns the meta object for the attribute '{@link catalogue.Empreinte#getLargeur <em>Largeur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Largeur</em>'.
+	 * @see catalogue.Empreinte#getLargeur()
+	 * @see #getEmpreinte()
+	 * @generated
+	 */
+	EAttribute getEmpreinte_Largeur();
+
+	/**
+	 * Returns the meta object for the attribute '{@link catalogue.Empreinte#getHauteur <em>Hauteur</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Hauteur</em>'.
+	 * @see catalogue.Empreinte#getHauteur()
+	 * @see #getEmpreinte()
+	 * @generated
+	 */
+	EAttribute getEmpreinte_Hauteur();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link catalogue.Empreinte#getPorts <em>Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Ports</em>'.
+	 * @see catalogue.Empreinte#getPorts()
+	 * @see #getEmpreinte()
+	 * @generated
+	 */
+	EReference getEmpreinte_Ports();
+
+	/**
 	 * Returns the meta object for class '{@link catalogue.Contrainte <em>Contrainte</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1019,17 +1016,6 @@ public interface CataloguePackage extends EPackage {
 	 * @generated
 	 */
 	EClass getContrainte();
-
-	/**
-	 * Returns the meta object for the attribute '{@link catalogue.Contrainte#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see catalogue.Contrainte#getName()
-	 * @see #getContrainte()
-	 * @generated
-	 */
-	EAttribute getContrainte_Name();
 
 	/**
 	 * Returns the meta object for class '{@link catalogue.OpBinaire <em>Op Binaire</em>}'.
@@ -1232,12 +1218,28 @@ public interface CataloguePackage extends EPackage {
 		EClass CATALOGUE = eINSTANCE.getCatalogue();
 
 		/**
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CATALOGUE__NOM = eINSTANCE.getCatalogue_Nom();
+
+		/**
 		 * The meta object literal for the '<em><b>Composants</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference CATALOGUE__COMPOSANTS = eINSTANCE.getCatalogue_Composants();
+
+		/**
+		 * The meta object literal for the '<em><b>Types Metadonnees</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CATALOGUE__TYPES_METADONNEES = eINSTANCE.getCatalogue_TypesMetadonnees();
 
 		/**
 		 * The meta object literal for the '{@link catalogue.impl.ComposantImpl <em>Composant</em>}' class.
@@ -1250,52 +1252,20 @@ public interface CataloguePackage extends EPackage {
 		EClass COMPOSANT = eINSTANCE.getComposant();
 
 		/**
-		 * The meta object literal for the '<em><b>Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPOSANT__ID = eINSTANCE.getComposant_Id();
+		EAttribute COMPOSANT__NOM = eINSTANCE.getComposant_Nom();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Metadonnees</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPOSANT__NAME = eINSTANCE.getComposant_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Brand</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPOSANT__BRAND = eINSTANCE.getComposant_Brand();
-
-		/**
-		 * The meta object literal for the '<em><b>Datasheet</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute COMPOSANT__DATASHEET = eINSTANCE.getComposant_Datasheet();
-
-		/**
-		 * The meta object literal for the '<em><b>Metadata</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPOSANT__METADATA = eINSTANCE.getComposant_Metadata();
-
-		/**
-		 * The meta object literal for the '<em><b>Footprint</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPOSANT__FOOTPRINT = eINSTANCE.getComposant_Footprint();
+		EReference COMPOSANT__METADONNEES = eINSTANCE.getComposant_Metadonnees();
 
 		/**
 		 * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
@@ -1306,6 +1276,14 @@ public interface CataloguePackage extends EPackage {
 		EReference COMPOSANT__PORTS = eINSTANCE.getComposant_Ports();
 
 		/**
+		 * The meta object literal for the '<em><b>Empreinte</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPOSANT__EMPREINTE = eINSTANCE.getComposant_Empreinte();
+
+		/**
 		 * The meta object literal for the '<em><b>Contraintes</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1314,56 +1292,48 @@ public interface CataloguePackage extends EPackage {
 		EReference COMPOSANT__CONTRAINTES = eINSTANCE.getComposant_Contraintes();
 
 		/**
-		 * The meta object literal for the '{@link catalogue.impl.MetadataImpl <em>Metadata</em>}' class.
+		 * The meta object literal for the '{@link catalogue.impl.TypeMetadonneeImpl <em>Type Metadonnee</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see catalogue.impl.MetadataImpl
-		 * @see catalogue.impl.CataloguePackageImpl#getMetadata()
+		 * @see catalogue.impl.TypeMetadonneeImpl
+		 * @see catalogue.impl.CataloguePackageImpl#getTypeMetadonnee()
 		 * @generated
 		 */
-		EClass METADATA = eINSTANCE.getMetadata();
+		EClass TYPE_METADONNEE = eINSTANCE.getTypeMetadonnee();
 
 		/**
-		 * The meta object literal for the '<em><b>Key</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute METADATA__KEY = eINSTANCE.getMetadata_Key();
+		EAttribute TYPE_METADONNEE__NOM = eINSTANCE.getTypeMetadonnee_Nom();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * The meta object literal for the '{@link catalogue.impl.MetadonneeImpl <em>Metadonnee</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * @see catalogue.impl.MetadonneeImpl
+		 * @see catalogue.impl.CataloguePackageImpl#getMetadonnee()
 		 * @generated
 		 */
-		EAttribute METADATA__VALUE = eINSTANCE.getMetadata_Value();
+		EClass METADONNEE = eINSTANCE.getMetadonnee();
 
 		/**
-		 * The meta object literal for the '{@link catalogue.impl.FootprintImpl <em>Footprint</em>}' class.
+		 * The meta object literal for the '<em><b>Valeur</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see catalogue.impl.FootprintImpl
-		 * @see catalogue.impl.CataloguePackageImpl#getFootprint()
 		 * @generated
 		 */
-		EClass FOOTPRINT = eINSTANCE.getFootprint();
+		EAttribute METADONNEE__VALEUR = eINSTANCE.getMetadonnee_Valeur();
 
 		/**
-		 * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FOOTPRINT__WIDTH = eINSTANCE.getFootprint_Width();
-
-		/**
-		 * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FOOTPRINT__HEIGHT = eINSTANCE.getFootprint_Height();
+		EReference METADONNEE__TYPE = eINSTANCE.getMetadonnee_Type();
 
 		/**
 		 * The meta object literal for the '{@link catalogue.impl.PortImpl <em>Port</em>}' class.
@@ -1376,12 +1346,12 @@ public interface CataloguePackage extends EPackage {
 		EClass PORT = eINSTANCE.getPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
+		EAttribute PORT__NOM = eINSTANCE.getPort_Nom();
 
 		/**
 		 * The meta object literal for the '<em><b>X</b></em>' attribute feature.
@@ -1400,6 +1370,48 @@ public interface CataloguePackage extends EPackage {
 		EAttribute PORT__Y = eINSTANCE.getPort_Y();
 
 		/**
+		 * The meta object literal for the '{@link catalogue.impl.EmpreinteImpl <em>Empreinte</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see catalogue.impl.EmpreinteImpl
+		 * @see catalogue.impl.CataloguePackageImpl#getEmpreinte()
+		 * @generated
+		 */
+		EClass EMPREINTE = eINSTANCE.getEmpreinte();
+
+		/**
+		 * The meta object literal for the '<em><b>Nom</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EMPREINTE__NOM = eINSTANCE.getEmpreinte_Nom();
+
+		/**
+		 * The meta object literal for the '<em><b>Largeur</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EMPREINTE__LARGEUR = eINSTANCE.getEmpreinte_Largeur();
+
+		/**
+		 * The meta object literal for the '<em><b>Hauteur</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute EMPREINTE__HAUTEUR = eINSTANCE.getEmpreinte_Hauteur();
+
+		/**
+		 * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EMPREINTE__PORTS = eINSTANCE.getEmpreinte_Ports();
+
+		/**
 		 * The meta object literal for the '{@link catalogue.impl.ContrainteImpl <em>Contrainte</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1408,14 +1420,6 @@ public interface CataloguePackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONTRAINTE = eINSTANCE.getContrainte();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CONTRAINTE__NAME = eINSTANCE.getContrainte_Name();
 
 		/**
 		 * The meta object literal for the '{@link catalogue.impl.OpBinaireImpl <em>Op Binaire</em>}' class.

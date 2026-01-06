@@ -59,15 +59,14 @@ public class CatalogueFactoryImpl extends EFactoryImpl implements CatalogueFacto
 		switch (eClass.getClassifierID()) {
 			case CataloguePackage.CATALOGUE: return createCatalogue();
 			case CataloguePackage.COMPOSANT: return createComposant();
-			case CataloguePackage.METADATA: return createMetadata();
-			case CataloguePackage.FOOTPRINT: return createFootprint();
+			case CataloguePackage.TYPE_METADONNEE: return createTypeMetadonnee();
+			case CataloguePackage.METADONNEE: return createMetadonnee();
 			case CataloguePackage.PORT: return createPort();
-			case CataloguePackage.OP_BINAIRE: return createOpBinaire();
+			case CataloguePackage.EMPREINTE: return createEmpreinte();
 			case CataloguePackage.ET: return createEt();
 			case CataloguePackage.OU: return createOu();
 			case CataloguePackage.NON: return createNon();
 			case CataloguePackage.REDONDANCE: return createRedondance();
-			case CataloguePackage.GEOMETRIQUE: return createGeometrique();
 			case CataloguePackage.GEO_GENERALE: return createGeoGenerale();
 			case CataloguePackage.GEO_SPECIFIQUE: return createGeoSpecifique();
 			default:
@@ -133,9 +132,9 @@ public class CatalogueFactoryImpl extends EFactoryImpl implements CatalogueFacto
 	 * @generated
 	 */
 	@Override
-	public Metadata createMetadata() {
-		MetadataImpl metadata = new MetadataImpl();
-		return metadata;
+	public TypeMetadonnee createTypeMetadonnee() {
+		TypeMetadonneeImpl typeMetadonnee = new TypeMetadonneeImpl();
+		return typeMetadonnee;
 	}
 
 	/**
@@ -144,9 +143,9 @@ public class CatalogueFactoryImpl extends EFactoryImpl implements CatalogueFacto
 	 * @generated
 	 */
 	@Override
-	public Footprint createFootprint() {
-		FootprintImpl footprint = new FootprintImpl();
-		return footprint;
+	public Metadonnee createMetadonnee() {
+		MetadonneeImpl metadonnee = new MetadonneeImpl();
+		return metadonnee;
 	}
 
 	/**
@@ -166,9 +165,9 @@ public class CatalogueFactoryImpl extends EFactoryImpl implements CatalogueFacto
 	 * @generated
 	 */
 	@Override
-	public OpBinaire createOpBinaire() {
-		OpBinaireImpl opBinaire = new OpBinaireImpl();
-		return opBinaire;
+	public Empreinte createEmpreinte() {
+		EmpreinteImpl empreinte = new EmpreinteImpl();
+		return empreinte;
 	}
 
 	/**
@@ -213,17 +212,6 @@ public class CatalogueFactoryImpl extends EFactoryImpl implements CatalogueFacto
 	public Redondance createRedondance() {
 		RedondanceImpl redondance = new RedondanceImpl();
 		return redondance;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Geometrique createGeometrique() {
-		GeometriqueImpl geometrique = new GeometriqueImpl();
-		return geometrique;
 	}
 
 	/**

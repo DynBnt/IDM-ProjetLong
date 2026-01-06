@@ -81,17 +81,6 @@ public class OpBinaireItemProvider extends ContrainteItemProvider {
 	}
 
 	/**
-	 * This returns OpBinaire.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/OpBinaire"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -99,10 +88,7 @@ public class OpBinaireItemProvider extends ContrainteItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((OpBinaire)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_OpBinaire_type") :
-			getString("_UI_OpBinaire_type") + " " + label;
+		return getString("_UI_OpBinaire_type");
 	}
 
 
@@ -139,11 +125,6 @@ public class OpBinaireItemProvider extends ContrainteItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(CataloguePackage.Literals.OP_BINAIRE__OPERANDES,
-				 CatalogueFactory.eINSTANCE.createOpBinaire()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CataloguePackage.Literals.OP_BINAIRE__OPERANDES,
 				 CatalogueFactory.eINSTANCE.createEt()));
 
 		newChildDescriptors.add
@@ -160,11 +141,6 @@ public class OpBinaireItemProvider extends ContrainteItemProvider {
 			(createChildParameter
 				(CataloguePackage.Literals.OP_BINAIRE__OPERANDES,
 				 CatalogueFactory.eINSTANCE.createRedondance()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(CataloguePackage.Literals.OP_BINAIRE__OPERANDES,
-				 CatalogueFactory.eINSTANCE.createGeometrique()));
 
 		newChildDescriptors.add
 			(createChildParameter

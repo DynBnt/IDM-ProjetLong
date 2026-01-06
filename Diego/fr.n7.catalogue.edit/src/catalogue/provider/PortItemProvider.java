@@ -60,7 +60,7 @@ public class PortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
+			addNomPropertyDescriptor(object);
 			addXPropertyDescriptor(object);
 			addYPropertyDescriptor(object);
 		}
@@ -68,19 +68,19 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Nom feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addNomPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Port_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_name_feature", "_UI_Port_type"),
-				 CataloguePackage.Literals.PORT__NAME,
+				 getString("_UI_Port_nom_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_nom_feature", "_UI_Port_type"),
+				 CataloguePackage.Literals.PORT__NOM,
 				 true,
 				 false,
 				 false,
@@ -152,7 +152,7 @@ public class PortItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Port)object).getName();
+		String label = ((Port)object).getNom();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Port_type") :
 			getString("_UI_Port_type") + " " + label;
@@ -171,7 +171,7 @@ public class PortItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Port.class)) {
-			case CataloguePackage.PORT__NAME:
+			case CataloguePackage.PORT__NOM:
 			case CataloguePackage.PORT__X:
 			case CataloguePackage.PORT__Y:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));

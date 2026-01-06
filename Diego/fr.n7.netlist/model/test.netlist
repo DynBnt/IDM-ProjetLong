@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<netlist:Netlist xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:netlist="http://www.example.org/netlist">
+  <elements xsi:type="netlist:InstanceComposant" nom="U1">
+    <type href="../TestCatalogue/test.catalogue#//@composants.2"/>
+    <ports>
+      <port href="../TestCatalogue/test.catalogue#MCU_VCC"/>
+    </ports>
+  </elements>
+  <elements xsi:type="netlist:InstanceComposant" nom="U2">
+    <type href="../TestCatalogue/test.catalogue#//@composants.2"/>
+  </elements>
+  <elements xsi:type="netlist:InstanceComposant" nom="U3">
+    <type href="../TestCatalogue/test.catalogue#//@composants.1"/>
+  </elements>
+  <elements xsi:type="netlist:Commentaire" texte="Chaîne MCU → Sensor → Power" sujet="U1"/>
+</netlist:Netlist>

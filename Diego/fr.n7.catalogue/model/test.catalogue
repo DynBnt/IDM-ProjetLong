@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogue:Catalogue xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:catalogue="http://fr.n7.catalogue" nom="CatalogueExemple">
+  <composants nom="Microcontroller">
+    <metadonnees valeur="processor" type="tm_category"/>
+    <metadonnees valeur="3.3V" type="tm_voltage"/>
+    <metadonnees valeur="QFP48" type="tm_package"/>
+    <ports nom="MCU_VCC" x="10.0" y="20.0"/>
+    <ports nom="MCU_GND" x="10.0"/>
+    <ports nom="MCU_PA0" y="10.0"/>
+    <ports nom="MCU_PA1" x="20.0" y="10.0"/>
+    <empreinte nom="MCU_Footprint" largeur="20.0" hauteur="20.0">
+      <ports nom="MCU_FP_REF"/>
+    </empreinte>
+    <contraintes xsi:type="catalogue:GeoGenerale" distanceMin="5.0"/>
+    <contraintes xsi:type="catalogue:Non">
+      <operande xsi:type="catalogue:GeoSpecifique" distanceMin="8.0" cleMetadonneeCible="category" valeurMetadonneeCible="power"/>
+    </contraintes>
+  </composants>
+  <composants nom="TempSensor">
+    <metadonnees valeur="sensor" type="tm_category"/>
+    <metadonnees valeur="temperature" type="tm_type"/>
+    <metadonnees valeur="3.3V" type="tm_voltage"/>
+    <ports nom="SENS_VCC" x="4.0" y="10.0"/>
+    <ports nom="SENS_GND" x="4.0"/>
+    <ports nom="SENS_DATA" x="8.0" y="5.0"/>
+    <empreinte nom="Sensor_Footprint" largeur="8.0" hauteur="10.0">
+      <ports nom="SENS_FP_REF"/>
+    </empreinte>
+    <contraintes xsi:type="catalogue:GeoSpecifique" distanceMin="15.0" cleMetadonneeCible="category" valeurMetadonneeCible="processor"/>
+    <contraintes xsi:type="catalogue:Et">
+      <operandes xsi:type="catalogue:GeoSpecifique" distanceMin="5.0" cleMetadonneeCible="voltage" valeurMetadonneeCible="3.3V"/>
+      <operandes xsi:type="catalogue:Redondance" minCount="1"/>
+    </contraintes>
+  </composants>
+  <composants nom="Regulator">
+    <metadonnees valeur="power" type="tm_category"/>
+    <metadonnees valeur="5V" type="tm_voltage"/>
+    <metadonnees valeur="SOT223" type="tm_package"/>
+    <ports nom="PWR_VIN" x="6.0" y="15.0"/>
+    <ports nom="PWR_GND" x="6.0"/>
+    <ports nom="PWR_VOUT" x="12.0" y="7.5"/>
+    <empreinte nom="Reg_Footprint" largeur="12.0" hauteur="15.0">
+      <ports nom="PWR_FP_REF"/>
+    </empreinte>
+    <contraintes xsi:type="catalogue:GeoGenerale" distanceMin="3.0" type="BOARD_EDGE"/>
+    <contraintes xsi:type="catalogue:Ou">
+      <operandes xsi:type="catalogue:Non">
+        <operande xsi:type="catalogue:GeoSpecifique" distanceMin="10.0" cleMetadonneeCible="category" valeurMetadonneeCible="sensor"/>
+      </operandes>
+      <operandes xsi:type="catalogue:Redondance" minCount="2"/>
+    </contraintes>
+  </composants>
+  <typesMetadonnees xmi:id="tm_category" nom="category"/>
+  <typesMetadonnees xmi:id="tm_voltage" nom="voltage"/>
+  <typesMetadonnees xmi:id="tm_package" nom="package"/>
+  <typesMetadonnees xmi:id="tm_type" nom="type"/>
+</catalogue:Catalogue>
